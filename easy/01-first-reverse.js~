@@ -1,0 +1,5 @@
+// reverse a string
+
+var text = "abcdefghijklmnopqrstuwxyz";
+var length = text.length;
+
