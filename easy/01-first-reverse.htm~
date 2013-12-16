@@ -7,19 +7,23 @@
 <body>
 	<script>
 		// reverse a string
+		function stringReverse(str) {
+			var length = str.length;
+			var newtext = "";
 
-		var text = "abcdefghijklmnopqrstuwxyz";
-		var length = text.length;
-		var newtext = "";
+			for (var i = length;i>=0;i--) {
+				newtext += str.charAt(i-1);
+			}
 
-		for (var i = length;i>=0;i--) {
-			newtext += text.charAt(i-1);
+			return newtext;
 		}
-
-		console.log(newtext);
+		
+		var text = "abcdefghijklmnopqrstuwxyz";
+		console.log(stringReverse(text);
 	</script>
 </body>
 </html>
+
 
 
 
