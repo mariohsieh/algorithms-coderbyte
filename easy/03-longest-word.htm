@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Easy - 03 - Longest Word</title>
+</head>
+<body>
+	<script>
+		// write a function that finds the longest word in a given string.
+
+		function longestWord(str) {
+			var temp = str.split(" ");
+			console.log(temp);
+
+			console.log(temp.length);
+			console.log(temp[3].length);
+			
+			longest = temp[0];
+			for (var i=0;i<temp.length-1;i++) {
+				if (temp[i].length < temp[i+1].length)
+				longest = temp[i+1];
+				//console.log(temp[i].length);
+				//console.log(temp[i+1]);
+			}
+			return longest;
+		}
+
+		string = "This is a really loooooooooooooooooong string.";
+		console.log(longestWord(string));
+	</script>
+</body>
+</html>
