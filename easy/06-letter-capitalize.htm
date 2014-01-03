@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Easy - 06 - Letter Capitalize</title>
+</head>
+<body>
+	<script>
+		// Capitalize certain characters in a string
+
+		function LetterCapitalize(str) {
+
+			str = str.split(" ");
+			for (var i in str) {
+				//console.log(str[i].charAt(0).toUpperCase());
+				str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+			}
+
+			str = str.toString();
+			str = str.replace(/,/g," ");
+			return str;
+		}
+
+		string = "i ran there";
+		console.log(LetterCapitalize(string));
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Easy - 05 - Simple Adding</title>
+</head>
+<body>
+	<script>
+		/*
+			Using the JavaScript language, have the function SimpleAdding(num) add up all the numbers from 1 to num. For the test cases, the parameter num will be any number from 1 to 1000. 
+		*/
+
+		function SimpleAdding(num) {
+			
+			var total = 0;
+
+			for (var i = 1;i<=num;i++) {
+				total += i;
+			}
+
+			return total;
+		}
+
+		num = 5;
+		console.log(SimpleAdding(num));
+	</script>
+</body>
+</html>
+
+

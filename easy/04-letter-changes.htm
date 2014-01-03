@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Easy - 04 - Letter Changes</title>
+</head>
+<body>
+	<script>
+		/* Using the JavaScript language, have the function LetterChanges(str) take the str parameter being passed and modify it using the following algorithm. Replace every letter in the string with the letter following it in the alphabet (ie. c becomes d, z becomes a). Then capitalize every vowel in this new string (a, e, i, o, u) and finally return this modified string. 
+		*/
+
+		function LetterChanges(str) {
+			str = str.toLowerCase();
+			//str = str.split("");
+			//console.log(str);
+
+			var alphabet = "abcdefghijklmnopqrstuvwxyz";
+			//alphabet = alphabet.split(",");
+			//console.log(alphabet[0]);
+
+			for (var i in str) {
+				for (var j=0;j<alphabet.length;j++) {
+					if (str[i] == alphabet[j]) {
+						console.log(i);
+						console.log(j);
+						console.log(str[i]);
+						console.log(alphabet[j+1]);
+						str[i] = alphabet[j+1];
+						//str = str.replace(str[i], alphabet[j+1]);
+						console.log(str);
+						break;
+					}
+					//break;
+				}
+			}
+
+			return str;
+		}
+
+		string = "GOOD BYE";
+		console.log(LetterChanges(string));
+	</script>
+</body>
+</html>

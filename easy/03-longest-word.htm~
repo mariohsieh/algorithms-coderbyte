@@ -9,6 +9,9 @@
 		// write a function that finds the longest word in a given string.
 
 		function longestWord(str) {
+
+			// use str = str.replace(/[^a-zA-Z]+/g, " ");
+
 			var temp = str.split(" ");
 			console.log(temp);
 

@@ -18,7 +18,7 @@
 			return newtext;
 		}
 		
-		var text = "abcdefghijklmnopqrstuwxyz";
+		var text = "abcdefghijklmnopqrstuvwxyz";
 		console.log(stringReverse(text);
 	</script>
 </body>
