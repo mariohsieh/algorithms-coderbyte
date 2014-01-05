@@ -25,12 +25,16 @@
 						console.log(j);
 						console.log(str[i]);
 						console.log(alphabet[j+1]);
-						str[i] = alphabet[j+1];
-						//str = str.replace(str[i], alphabet[j+1]);
-						console.log(str[i]);
+						//str[i] = alphabet[j+1];
+						str = str.replace(str[i], alphabet[j+1]);
+						console.log(str);
 						break;
 					}
 					//break;
+				}
+
+				if (str[i] == "a" || str[i] == "e" || str[i] == "i" || str[i] == "o" || str[i] == "u") {
+					str[i] = str[i].toUppderCase();
 				}
 			}
 
