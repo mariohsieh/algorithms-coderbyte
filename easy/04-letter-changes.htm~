@@ -10,38 +10,30 @@
 		*/
 
 		function LetterChanges(str) {
-			str = str.toLowerCase();
-			//str = str.split("");
-			//console.log(str);
+			str = str.toLowerCase();	// make all lowercase
+			//str = str.toLowerCase().split("");
+			console.log(str);
 
-			var alphabet = "abcdefghijklmnopqrstuvwxyz";
-			//alphabet = alphabet.split(",");
-			//console.log(alphabet[0]);
+			var oldalpha = "abcdefghijklmnopqrstuvwxyz";	// declare an alphabet string
+			var newalpha = "bcdEfghIjklmnOpqrstUvwxyzA";
+			//alphabet = alphabet.split("");
+			//console.log(oldalpha);
 
-			for (var i in str) {
-				for (var j=0;j<alphabet.length;j++) {
-					if (str[i] == alphabet[j]) {
-						console.log(i);
-						console.log(j);
-						console.log(str[i]);
-						console.log(alphabet[j+1]);
-						//str[i] = alphabet[j+1];
-						str = str.replace(str[i], alphabet[j+1]);
-						console.log(str);
-						break;
-					}
-					//break;
-				}
+			var newstr = "";	// declare and initialize new string
 
-				if (str[i] == "a" || str[i] == "e" || str[i] == "i" || str[i] == "o" || str[i] == "u") {
-					str[i] = str[i].toUppderCase();
-				}
+			for (var i=0; i<str.length;i++) {
+				var letter = oldalpha.indexOf(str.charAt(i));
+				if (letter !=	-1 ) {	// check to see if character is actually a letter
+					newstr += newalpha[letter];
+				} else {
+					newstr += str.charAt(i); // don't change character if not a letter
+				}	
 			}
 
-			return str;
+			return newstr;
 		}
 
-		string = "GOOD BYE";
+		string = "Do you believe in zodiacs?";
 		console.log(LetterChanges(string));
 	</script>
 </body>

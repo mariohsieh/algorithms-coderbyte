@@ -16,9 +16,7 @@
 				str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
 			}
 
-			str = str.toString();
-			str = str.replace(/,/g," ");
-			return str;
+			return str.join(" ");
 		}
 
 		string = "i ran there";
