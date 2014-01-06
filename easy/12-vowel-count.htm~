@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Easy - 03 - Longest Word</title>
+</head>
+<body>
+	<script>
+		// write a function that counts the vowels in a string.
+
+		function VowelCount(str) {
+			var pattern = /[aeiou]/;
+			var total = 0;
+
+			for (var i=0;i<str.length;i++) {
+				if (pattern.test(str[i]))
+					console.log(str[i]);
+					total++;
+			}
+			return total;
+		}
+
+		string = "this is a sentence!";
+		console.log(VowelCount(string));
+	</script>
+</body>
+</html>

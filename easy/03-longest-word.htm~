@@ -9,26 +9,22 @@
 		// write a function that finds the longest word in a given string.
 
 		function longestWord(str) {
+			str = str.replace(/\W+/g, " ").trim();	// replace all non-word characters with whitespaces then trim outside whitespaces
 
-			// use str = str.replace(/[^a-zA-Z]+/g, " ");
-
-			var temp = str.split(" ");
-			console.log(temp);
-
-			console.log(temp.length);
-			console.log(temp[3].length);
+			var strArray = str.split(" ");	// split string into and array
 			
-			longest = temp[0];
-			for (var i=0;i<temp.length-1;i++) {
-				if (temp[i].length < temp[i+1].length)
-				longest = temp[i+1];
-				//console.log(temp[i].length);
-				//console.log(temp[i+1]);
+			// loop to find longest word
+			var longest = strArray[0];	// declare and initialize longest word
+			for (var i=1;i<strArray.length;i++) {
+				if (longest.length < strArray[i].length)
+					longest = strArray[i];
 			}
+
 			return longest;
 		}
 
-		string = "This is a really loooooooooooooooooong string.";
+		string = "a confusing /:sentence:/[ this is not!!!!!!!~";
+		//string = "this is a loooooooooooooong sentence!!!!!";
 		console.log(longestWord(string));
 	</script>
 </body>
