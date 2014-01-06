@@ -6,14 +6,25 @@
 </head>
 <body>
 	<script>
-		// Capitalize certain characters in a string
+		// Write a function that returns true if the pattern '+Number+' exists
 
 		function SimpleSymbols(str) {
-;
-			return str;
+			var pattern = /[a-zA-Z]/;
+				
+		 	for (var i=0;i<str.length;i++) {
+				if (pattern.test(str[i])) {
+					if (i == 0 || i == str.length-1)
+						return false;
+					if (str[i-1] != "+" && str[i+1] != "+") 
+						return false;
+				} else {
+					return false;
+				}
+			}
+			return true;
 		}
 
-		string = "+d+=3=+s+";
+		string = "+++===+2++++";
 		console.log(SimpleSymbols(string));
 	</script>
 </body>
