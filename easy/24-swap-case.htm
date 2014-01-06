@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Easy - 24 - Swap Case</title>
+</head>
+<body>
+	<script>
+		// Write a function that determines if a string is written the same way forward and backwards
+
+		function SwapCase(str) {
+
+			var loweralpha = /[a-z]/;
+			var upperalpha = /[A-Z]/;
+
+			var newstr = "";
+
+			for (var i=0;i<str.length;i++) {
+				if (loweralpha.test(str[i])) {
+					newstr += str[i].toUpperCase();
+				} else if (upperalpha.test(str[i])) {
+					newstr += str[i].toLowerCase();
+				} else 
+					newstr += str[i];
+			}
+			return newstr;
+		}
+
+		string = "Hello there";
+		console.log(SwapCase(string));
+	</script>
+</body>
+</html>
