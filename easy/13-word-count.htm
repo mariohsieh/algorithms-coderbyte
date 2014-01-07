@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Easy - 13 - Word Count</title>
+</head>
+<body>
+	<script>
+		// Write a function that counts the words in a string
+
+		function WordCount(str) {
+			//var pattern = /\W/;
+			str = str.split(" ");
+			console.log(str);
+
+			for (var i =0;i<str.length;i++) {
+				if (str[i] == "") {
+					str.splice(i,1);
+				}
+			}
+
+			console.log(str);
+			return str.length;
+		}
+
+/*
+		function WordCount(str) { 
+		  return str.split(" ").length; 					
+		}
+*/
+
+		string = "Good morning mister!  How are you doing?";
+		console.log(WordCount(string));
+	</script>
+</body>
+</html>
+
+
+
+
+
+
