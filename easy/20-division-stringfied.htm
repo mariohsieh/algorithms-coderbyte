@@ -8,12 +8,25 @@
 	<script>
 		// Write a function that divides two numbers and returns them in a certain format
 
-		function DivisionStringified(str) {
-			
+		function DivisionStringified(num1, num2) {
+			var result = Math.round(num1/num2);
+
+			result = result.toString().split("");
+
+			if (result.length > 3) {
+				for (var i=result.length-3;i>0;i-=3) {
+				//console.log(result.length);	
+					//var i = 2;		
+					result.splice(i,0,",");
+				}
+			}
+
+			return result.join("");
 		}
 
-		string = "Good morning mister!  How are you doing?";
-		console.log(DivisionStringified(string));
+
+		//console.log(DivisionStringified(123456789, 10000));
+		console.log(DivisionStringified(45, 50));
 	</script>
 </body>
 </html>
