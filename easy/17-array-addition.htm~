@@ -6,14 +6,52 @@
 </head>
 <body>
 	<script>
-		// Write a function that divides two numbers and returns them in a certain format
+		// Write a function that determines if numbers in an array can add up to the largest number in the array
+/*
+		function ArrayAdditionI(arr) {
+			arr = arr.sort(function(a,b) {return a-b});
 
-		function ArrayAddition() {
+			var last = arr[arr.length-1];
+			var sum = 0;
+			var diff;
 
-			return result;
+			for(var i=0;i<arr.length-1;i++) {
+				sum += arr[i];
+			}
+
+			if (sum == last) {
+				return true;
+			} else {
+				//diff = sum - last;
+				return false;
+			}
+*/
+		function ArrayAdditionI(arr) {
+	
+			arr = arr.sort(function(a,b) {return a-b});
+			var max = arr.pop();
+
+			console.log(arr);	
+			console.log(sum);
+
+			var sum = 0;
+			for(var i=0;i<arr.length;i++) {
+				sum += arr[i];
+			}
+			
+			if (sum >= max) {
+				return true;
+			} else {
+				return false;			
+			}
+	
 		}
 
-		console.log(ArrayAddition());
+
+
+		myArray = [3,5,-1,11,12];
+		//myArray = [5,7,16,1,2];
+		console.log(ArrayAdditionI(myArray));
 	</script>
 </body>
 </html>

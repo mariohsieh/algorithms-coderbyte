@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Easy - 19 - Second GreatLow</title>
+</head>
+<body>
+	<script>
+		// Write a function that determines the second lowest and greatest numbers in an array.
+
+		function SecondGreatLow(arr) {
+			arr.sort(function(a,b) {return a-b});
+			var result = "";
+
+			if (arr.length != 2) {
+				while (arr[0] == arr[1]) {
+					arr.shift();
+				}
+
+				while (arr[arr.length-2] == arr[arr.length-1]) {
+					arr.pop();
+				}
+				//console.log(arr);
+				result += arr[1] + " " + arr[arr.length-2];
+			} else {
+				result += arr[0] + " " + arr[1];
+			}
+			return result;
+		}
+
+		//array = [2,2,2,5,5,5,6,6,6,6,6,6];
+		array = [80,80];
+		console.log(SecondGreatLow(array));
+	</script>
+</body>
+</html>
+
+
+
+
+
+
