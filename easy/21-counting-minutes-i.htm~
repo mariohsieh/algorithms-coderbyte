@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Easy - 21 - Counting Minutes I</title>
+</head>
+<body>
+	<script>
+		/*
+			Using the JavaScript language, have the function CountingMinutesI(str) take the str parameter being passed which will be two times (each properly formatted with a colon and am or pm) separated by a hyphen and return the total number of minutes between the two times. 
+			The time will be in a 12 hour clock format. For example: if str is 9:00am-10:00am then the output should be 60. 
+			If str is 1:00pm-11:00am the output should be 1320. 
+
+		*/
+
+		function calcMinutes(str) {
+
+			var isPM = /[Pp]/;
+			var i=0;
+			var minutes = 0;
+
+			
+			var ampm = str.slice(str.length-2);
+			str = str.slice(0,str.length-2).split(":");
+			//console.log(ampm);
+			//console.log(str[0]);
+		
+			str[0] = parseInt(str[0]);
+			str[1] = parseInt(str[1]);
+
+			if (isPM.test(ampm) && str[0] != 12) {
+				str[0] += 12;
+			} else if (!isPM.test(ampm) && str[0] == 12) {
+				str[0] -= 12;
+			}
+			console.log(str);
+			minutes += str[0]*60 + str[1];
+
+			return minutes;
+		}
+
+		function CountingMinutesI(str) {
+			str = str.split("-");
+			console.log(str);
+
+			var start = 0;
+			var end = 0;
+			var timeDifference = 0;
+
+	
+			start = calcMinutes(str[0]);
+			end = calcMinutes(str[1]);
+			console.log(start);
+			console.log(end);
+
+			timeDifference = end-start;
+			if (timeDifference < 0) {
+				timeDifference = (1440-start) + end;
+			}			
+
+
+			return timeDifference;
+		}
+
+		time = "12:30pm-12:00am";	// should output 690
+		//time = "9:00am-10:00am";	// should output 60
+		time = "1:00pm-12:59pm";	// should output 1320
+		console.log(CountingMinutesI(time));
+	</script>
+</body>
+</html>

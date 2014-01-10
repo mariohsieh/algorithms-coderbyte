@@ -30,6 +30,8 @@
 				return false;
 			}
 */
+
+/*
 		function ArrayAdditionI(arr) {
 	
 			arr = arr.sort(function(a,b) {return a-b});
@@ -49,7 +51,7 @@
 			}
 	
 		}
-
+*/
 
 
 		myArray = [3,5,-1,11,12];
