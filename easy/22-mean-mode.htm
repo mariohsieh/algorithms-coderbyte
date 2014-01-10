@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Easy - 22 - Mean Mode</title>
+</head>
+<body>
+	<script>
+		// Write a function that determines if the mode equals the mean in an array
+
+		function MeanMode(arr) {
+	
+			var mean = 0;
+			var sum = 0;
+
+			for (var i=0;i<arr.length;i++) {
+				sum += arr[i];
+			}
+
+			mean = sum/arr.length;
+		
+			//return mean;
+
+			arr.sort(function (a,b) {return a-b});
+			//console.log(arr);
+			var ModeArr = [];
+			
+			while (arr.length > 0) {
+				var count = 0;
+				while (arr[0] == arr[1]) {
+					arr.shift();
+					count++;
+				}
+				count++;
+				ModeArr[arr[0]] = count;
+				arr.shift();
+				console.log(ModeArr);
+			}
+
+			//var mode = ModeArr.indexOf(Math.max.apply(Math,ModeArr));
+			//console.log(mode);
+
+			var mode;
+			var modeValue;
+	
+			for (key in ModeArr) {
+				if (!mode || ModeArr[key] > mode ) {
+					modeValue = ModeArr[key];
+					mode = key;
+				}
+			}
+
+			mode = parseInt(mode);
+			console.log(mode);
+			console.log(modeValue);
+			console.log(mean);
+	
+			
+
+			if (mode == mean)
+				return 1;
+			else 
+				return 0;
+
+		}
+ 
+		array = [5,3,3,3,1];	
+		//array = [13, 18, 13, 14, 13, 16, 14, 21, 13];
+		console.log(MeanMode(array));
+
+	</script>
+</body>
+</html>
