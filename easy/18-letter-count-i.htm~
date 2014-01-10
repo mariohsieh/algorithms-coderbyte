@@ -6,27 +6,24 @@
 </head>
 <body>
 	<script>
-		// Write a function that determines which word has the greatest number of repeated letters.
-
-		//function MaxLetterCount(array) {
-
-		//}
-
+		/* Have the function LetterCountI(str) take the str parameter being passed and return the first word with the greatest number of repeated letters. 
+			For example: "Today, is the greatest day ever!" should return greatest because it has 2 e's (and 2 t's) and it comes before ever which also has 2 e's. 
+			If there are no words with repeating letters return -1. Words will be separated by spaces. 
+		*/
 
 		function LetterCount(str) {
 			var arr = str.toLowerCase().split(" ");
 			console.log(arr);
 
-			var word = "";
+			var letterArray = [];
 
-			i=4;
-			//for (var i=0;i<arr.length;i++) {
+			i=7;
+			for (var i=0;i<arr.length;i++) {
 				var temp = arr[i].split("").sort();
 				var tempArray = [];
-				while (temp.length != 0) {
-					
+				while (temp.length > 0) {
 					var count = 0;
-					if (temp[0] == temp[1]) {
+					while (temp[0] == temp[1]) {
 						temp.shift();
 						count++;
 					}
@@ -34,24 +31,48 @@
 					count++;
 					tempArray[temp[0]] = count;
 					temp.shift();
-					console.log(tempArray);
+					//console.log(tempArray);
 				}
 
-				var letterKey;
-				var letterValue;
+				var letterKey = "";
+				var letterValue = 0;
 
 				for (key in tempArray) {
-					if (!letterKey || ModeArr[key] > letterKey ) {
-						letterValue = ModeArr[key];
+					if (!letterValue || tempArray[key] > letterValue ) {
+						letterValue = tempArray[key];
 						letterKey = key;
 					}
 				}
-			//}
 
-			return word;
+				//console.log(letterKey);
+				//console.log(letterValue);
+				letterArray[arr[i]] = letterValue;
+				//console.log(letterArray);
+			}
+
+			var word = "";
+			var wordValue = 0;
+
+			console.log(letterArray);
+			for (key in letterArray) {
+				//console.log(key);
+				if (!word || letterArray[key] > wordValue) {
+					wordValue = letterArray[key];
+					word = key;
+					//console.log(wordValue);
+				}
+			}
+
+			if (wordValue == 1)
+				return -1;
+			else 
+				return word;
 		}
 
-		string = "Say something I am giving up on yooou.";
+		//string = "Say something I am giving up on yooou";
+		//string = "the dog and cat";
+		string = "a bat cat rat";
+		//string = "hello mmmmmmmmmmister computer";
 		console.log(LetterCount(string));
 	</script>
 </body>
