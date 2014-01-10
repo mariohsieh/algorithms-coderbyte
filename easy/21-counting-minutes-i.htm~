@@ -64,7 +64,7 @@
 
 		time = "12:30pm-12:00am";	// should output 690
 		//time = "9:00am-10:00am";	// should output 60
-		time = "1:00pm-12:59pm";	// should output 1320
+		//time = "1:00pm-12:59pm";	// should output 1320
 		console.log(CountingMinutesI(time));
 	</script>
 </body>
