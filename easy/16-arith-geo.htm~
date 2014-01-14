@@ -22,7 +22,17 @@
 			if (diff1 == diff2) {
 				return "Arithmetic";
 			}
-
+/*
+			var count = 0;
+			for (var j=0;j<arr.length-1;j++) {
+				var temp = arr[j+1] - arr[j];
+				if (temp == diff1) {
+					count++;
+				}
+			}
+		
+			if (count == arr.length-1)
+*/
 			//if geometric, all numbers preceding current number would be a factor
 			for (var i=1;i<arr.length;i++) {
 				console.log(arr[i]);

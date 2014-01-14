@@ -17,7 +17,7 @@
 
 			var letterArray = [];
 
-			i=7;
+			//i=7;
 			for (var i=0;i<arr.length;i++) {
 				var temp = arr[i].split("").sort();
 				var tempArray = [];
@@ -37,7 +37,7 @@
 				var letterKey = "";
 				var letterValue = 0;
 
-				for (key in tempArray) {
+				for (key in tempArray) {	// finding the most repeating letter
 					if (!letterValue || tempArray[key] > letterValue ) {
 						letterValue = tempArray[key];
 						letterKey = key;
@@ -46,7 +46,7 @@
 
 				//console.log(letterKey);
 				//console.log(letterValue);
-				letterArray[arr[i]] = letterValue;
+				letterArray[arr[i]] = letterValue;	// setting each word as index and the value of its most repeating letter 
 				//console.log(letterArray);
 			}
 
@@ -54,7 +54,7 @@
 			var wordValue = 0;
 
 			console.log(letterArray);
-			for (key in letterArray) {
+			for (key in letterArray) {		// comparing all words and finding the one with the highest repeating letter
 				//console.log(key);
 				if (!word || letterArray[key] > wordValue) {
 					wordValue = letterArray[key];
@@ -63,15 +63,15 @@
 				}
 			}
 
-			if (wordValue == 1)
+			if (wordValue == 1) 	// check if there are no repeating letters
 				return -1;
 			else 
 				return word;
 		}
 
 		//string = "Say something I am giving up on yooou";
-		//string = "the dog and cat";
-		string = "a bat cat rat";
+		string = "the dog and cat";
+		//string = "a bat cat rat";
 		//string = "hello mmmmmmmmmmister computer";
 		console.log(LetterCount(string));
 	</script>

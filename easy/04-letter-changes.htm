@@ -22,7 +22,7 @@
 			var newstr = "";	// declare and initialize new string
 
 			for (var i=0; i<str.length;i++) {
-				var letter = oldalpha.indexOf(str.charAt(i));
+				var letter = oldalpha.indexOf(str[i]);
 				if (letter !=	-1 ) {	// check to see if character is actually a letter
 					newstr += newalpha[letter];
 				} else {

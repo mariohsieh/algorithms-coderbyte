@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Medium -01 - Prime Time - Coderbyte</title>
+</head>
+<body>
+	<script>
+		/*
+			Using the JavaScript language, have the function PrimeTime(num) take the num parameter being passed and return the string true if the parameter is a prime number, otherwise return the string false. 
+			The range will be between 1 and 2^16.
+		*/
+
+		function PrimeTime(num) {
+			
+			var half = Math.floor(num/2);
+
+			for (var i=2;i<half;i++) {
+				//console.log(i);
+				//console.log(num%i);
+				if (num%i == 0) {
+					console.log(i);
+					return false;
+				}
+			}
+
+			return true;
+		}
+
+
+		number = 23;
+
+		console.log(PrimeTime(number));
+	</script>
+</body>
+</html>

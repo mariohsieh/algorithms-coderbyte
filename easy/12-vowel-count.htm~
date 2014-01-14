@@ -6,7 +6,7 @@
 </head>
 <body>
 	<script>
-		// write a function that counts the words in a string.
+		// write a function that counts the vowels in a string.
 
 		function VowelCount(str) {
 			var pattern = /[aeiou]/;

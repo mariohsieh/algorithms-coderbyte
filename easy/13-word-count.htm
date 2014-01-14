@@ -6,14 +6,14 @@
 </head>
 <body>
 	<script>
-		// Write a function that counts the words in a string
+		// Have the function WordCount(str) take the str string parameter being passed and return the number of words the string contains (ie. "Never eat shredded wheat" would return 4). Words will be separated by single spaces. 
 
 		function WordCount(str) {
 			//var pattern = /\W/;
 			str = str.split(" ");
 			console.log(str);
 
-			for (var i =0;i<str.length;i++) {
+			for (var i =0;i<str.length;i++) {	// remove null entries
 				if (str[i] == "") {
 					str.splice(i,1);
 				}

@@ -24,8 +24,8 @@
 			//console.log(ampm);
 			//console.log(str[0]);
 		
-			str[0] = parseInt(str[0]);
-			str[1] = parseInt(str[1]);
+			str[0] = parseInt(str[0]);	// hours
+			str[1] = parseInt(str[1]);	// minutes
 
 			if (isPM.test(ampm) && str[0] != 12) {
 				str[0] += 12;
