@@ -14,20 +14,39 @@
 
 		function PrimeMover(num) {
 
-			var prime;
+			if (num <= 1)
+				return "no prime numbers";
+			if (num == 2)
+				return 3;
 
-			while (counter <= num) {
-				
-				if (
-					counter++;
+
+			var lastPrime;
+			var primeCounter = 2;
+			var index = 4;
+
+			while (primeCounter < num) {
+				half = Math.floor(index/2);
+
+				// loop to see if index is a prime number
+				for (var i=2;i<=half;i++) {
+					if (index%i == 0) {
+						break;
+					}
+					if (i == half) {
+						primeCounter++;
+						lastPrime = index;
+						//console.log(lastPrime);
+						//console.log(primeCounter);
+					}
+				}
+
+				index++;
 			}
 
-			return prime;
+			return lastPrime;
 		}
 
-
-		number = 23;
-
+		number = 16;
 		console.log(PrimeMover(number));
 	</script>
 </body>
