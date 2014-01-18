@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Medium -05 - Division - Coderbyte</title>
+</head>
+<body>
+	<script>
+		/*
+			Using the JavaScript language, have the function Division(num1,num2) take both parameters being passed and return the Greatest Common Factor. 
+			That is, return the greatest number that evenly goes into both numbers with no remainder. 
+			For example: 12 and 16 both are divisible by 1, 2, and 4 so the output should be 4. 
+			The range for both parameters will be from 1 to 10^3.
+		*/
+
+		function Division(num1, num2) {
+
+			if (num1 == 1 || num2 == 1)
+				return 1;
+
+			if (num1 == 2 || num2 == 2) {
+				if (num1%2 == 0 || num2%2==0)
+					return 2;
+				else
+					return 1;
+			}
+
+			if (num1%num2 == 0)
+				return num2;
+			if (num2%num1 == 0)
+				return num1;
+
+			var half;
+			var factor = [];
+
+			// find lower of the two numbers and set the half mark
+			if (num1 <= num2) {
+				half = Math.round(num1/2);
+				lower = num1;
+				higher = num2;
+			} else {
+				half = Math.round(num2/2);
+				lower = num2;
+				higher = num1;
+			}
+
+			console.log(half);
+
+			// loop through numbers and determine which one is a factor
+			for (var i=1;i<=half;i++) {
+				if (lower%i == 0) {
+					factor.push(i);
+					console.log(i);
+				}
+			}
+
+			var last = factor.length-1;
+			for (i=last;i>=0;i--) {
+				if (higher%factor[i] == 0)
+					return factor[i];
+			}
+
+			return 0;
+		}
+
+		//num1 = 30;
+		//num2 = 24;
+
+		//num1 = 100;
+		//num2 = 50;
+
+		num1 = 14;
+		num2 = 28;
+
+		//num1 = 15;
+		//num2 = 60;
+
+		console.log(Division(num1, num2));
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
