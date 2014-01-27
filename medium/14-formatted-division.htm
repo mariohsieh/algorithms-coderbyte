@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<title>Medium -06 - String Scramble - Coderbyte</title>
+</head>
+<body>
+	<script>
+		/*
+			Using the JavaScript language, have the function FormattedDivision(num1,num2) take both parameters being passed, divide num1 by num2, and return the result as a string with properly formatted commas and 4 significant digits after the decimal place. 
+			For example: if num1 is 123456789 and num2 is 10000 the output should be "12,345.6789". 
+			The output must contain a number in the one's place even if it is a zero. 
+		*/
+
+		function FormattedDivision(num1,num2) {
+
+			var answer = num1/num2;
+			answer = answer.toFixed(4).toString().split("");
+
+			if (answer.length > 8) {
+				for (var i=answer.length-8;i>0;i-=3) {
+				//console.log(result.length);	
+					//var i = 2;		
+					answer.splice(i,0,",");
+				}
+			}
+
+			return answer.join("");
+		}
+
+		num1 = 2342340;
+		num2 = 12;
+		console.log(FormattedDivision(num1, num2));
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
